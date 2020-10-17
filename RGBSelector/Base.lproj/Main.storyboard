@@ -147,9 +147,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="gZ5-da-2sF" id="A3J-LS-9xq"/>
-                        <outlet property="greenLabel" destination="06u-tX-cHR" id="xO8-3y-fzH"/>
-                        <outlet property="redLabel" destination="9qZ-3Z-3aK" id="RbY-Oc-IEh"/>
+                        <outlet property="blueValueLabel" destination="gZ5-da-2sF" id="A3J-LS-9xq"/>
+                        <outlet property="greenValueLabel" destination="06u-tX-cHR" id="xO8-3y-fzH"/>
+                        <outlet property="redValueLabel" destination="9qZ-3Z-3aK" id="RbY-Oc-IEh"/>
                         <outlet property="resultColorView" destination="cch-ic-9w2" id="vpG-Ae-Hzk"/>
                     </connections>
                 </viewController>

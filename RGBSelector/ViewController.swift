@@ -17,26 +17,26 @@ class ViewController: UIViewController {
     
     @IBOutlet var resultColorView: UIView!
     
-    @IBOutlet var redLabel: UILabel!
-    @IBOutlet var greenLabel: UILabel!
-    @IBOutlet var blueLabel: UILabel!
+    @IBOutlet var redValueLabel: UILabel!
+    @IBOutlet var greenValueLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func redValueChanged(_ sender: UISlider) {
-        redLabel.text = String(format: "%.2f", sender.value)
+        redValueLabel.text = String(format: "%.2f", sender.value)
         changeColorComponent(component: .red, value: sender.value)
     }
     
     @IBAction func greenValueChanged(_ sender: UISlider) {
-        greenLabel.text = String(format: "%.2f", sender.value)
+        greenValueLabel.text = String(format: "%.2f", sender.value)
         changeColorComponent(component: .green, value: sender.value)
     }
     
     @IBAction func blueValueChanged(_ sender: UISlider) {
-        blueLabel.text = String(format: "%.2f", sender.value)
+        blueValueLabel.text = String(format: "%.2f", sender.value)
         changeColorComponent(component: .blue, value: sender.value)
     }
     
