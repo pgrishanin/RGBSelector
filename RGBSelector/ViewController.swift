@@ -8,12 +8,61 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    enum ColorComponent {
+        case red
+        case green
+        case blue
+    }
+    
+    @IBOutlet var resultColorView: UIView!
+    
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func redValueChanged(_ sender: UISlider) {
+        redLabel.text = String(format: "%.2f", sender.value)
+        changeColorComponent(component: .red, value: sender.value)
+    }
+    
+    @IBAction func greenValueChanged(_ sender: UISlider) {
+        greenLabel.text = String(format: "%.2f", sender.value)
+        changeColorComponent(component: .green, value: sender.value)
+    }
+    
+    @IBAction func blueValueChanged(_ sender: UISlider) {
+        blueLabel.text = String(format: "%.2f", sender.value)
+        changeColorComponent(component: .blue, value: sender.value)
+    }
+    
+    private func changeColorComponent(component: ColorComponent, value: Float) {
+        
+        var redComponent: CGFloat = 0.0
+        var greenComponent: CGFloat = 0.0
+        var blueComponent: CGFloat = 0.0
+        var alphaComponent: CGFloat = 0.0
+        
+        resultColorView?.backgroundColor?.getRed(
+            &redComponent,
+            green: &greenComponent,
+            blue: &blueComponent,
+            alpha: &alphaComponent
+        )
+        
+        switch component {
+        case .red:
+            resultColorView?.backgroundColor = UIColor(red: CGFloat(value), green: greenComponent, blue: blueComponent, alpha: 1)
+        case .green:
+            resultColorView?.backgroundColor = UIColor(red: redComponent, green: CGFloat(value), blue: blueComponent, alpha: 1)
+        case .blue:
+            resultColorView?.backgroundColor = UIColor(red: redComponent, green: greenComponent, blue: CGFloat(value), alpha: 1)
+        }
+        
+    }
 }
 
