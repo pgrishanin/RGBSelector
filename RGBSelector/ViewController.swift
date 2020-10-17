@@ -56,11 +56,26 @@ class ViewController: UIViewController {
         
         switch component {
         case .red:
-            resultColorView?.backgroundColor = UIColor(red: CGFloat(value), green: greenComponent, blue: blueComponent, alpha: 1)
+            resultColorView?.backgroundColor = UIColor(
+                red: CGFloat(value),
+                green: greenComponent,
+                blue: blueComponent,
+                alpha: 1
+            )
         case .green:
-            resultColorView?.backgroundColor = UIColor(red: redComponent, green: CGFloat(value), blue: blueComponent, alpha: 1)
+            resultColorView?.backgroundColor = UIColor(
+                red: redComponent,
+                green: CGFloat(value),
+                blue: blueComponent,
+                alpha: 1
+            )
         case .blue:
-            resultColorView?.backgroundColor = UIColor(red: redComponent, green: greenComponent, blue: CGFloat(value), alpha: 1)
+            resultColorView?.backgroundColor = UIColor(
+                red: redComponent,
+                green: greenComponent,
+                blue: CGFloat(value),
+                alpha: 1
+            )
         }
         
     }
